@@ -1,0 +1,1 @@
+# ms-golang-template
