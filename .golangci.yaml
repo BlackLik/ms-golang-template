@@ -1,0 +1,38 @@
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+  allow-parallel-runners: true
+  go: '1.22'
+  allow-serial-runners: true
+
+linters:
+  enable-all: true
+  disable:
+    - execinquery
+    - gomnd
+    - depguard
+    - revive
+    - stylecheck
+    - exportloopref
+
+
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+  severity:
+    staticcheck: warning
+    govet: error
+    errcheck: warning
+    deadcode: error
+
+output:
+  formats:
+    - format: colored-line-number
+  print-issued-lines: true
+  sort-results: true
+
+notify:
+  notify-on: any
+  notify-by: error
